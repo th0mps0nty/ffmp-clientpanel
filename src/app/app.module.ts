@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/Forms';
+import { FlashMessagesModule } from 'angular2-flash-messages';
 
 import { environment } from '../environments/environment';
 import { AngularFireModule } from 'angularfire2';
@@ -21,28 +23,30 @@ import { SettingsComponent } from './components/settings/settings.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
-	declarations: [
-		AppComponent,
-		NavbarComponent,
-		DashboardComponent,
-		ClientsComponent,
-		SidebarComponent,
-		AddClientComponent,
-		EditClientComponent,
-		ClientDetailsComponent,
-		LoginComponent,
-		RegisterComponent,
-		SettingsComponent,
-		NotFoundComponent
-	],
-	imports: [
-		BrowserModule,
-		AppRoutingModule,
-		AngularFireModule.initializeApp(environment.firebase, 'clientpanel'),
-		AngularFirestoreModule,
-		AngularFireAuthModule
-	],
-	providers: [],
-	bootstrap: [ AppComponent ]
+  declarations: [
+    AppComponent,
+    NavbarComponent,
+    DashboardComponent,
+    ClientsComponent,
+    SidebarComponent,
+    AddClientComponent,
+    EditClientComponent,
+    ClientDetailsComponent,
+    LoginComponent,
+    RegisterComponent,
+    SettingsComponent,
+    NotFoundComponent
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    FlashMessagesModule.forRoot(),
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase, 'clientpanel'),
+    AngularFirestoreModule,
+    AngularFireAuthModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule {}
